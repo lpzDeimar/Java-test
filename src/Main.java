@@ -7,11 +7,30 @@ public class Main {
 
         Marca marca = new Marca("nrDeModelols",2023,"abc121");
 
-        Auto caro1 = new Auto(propietario,marca);
-        caro1.setVelMax(123);
-        caro1.aceleracion();
-        caro1.aceleracion();
-        caro1.aceleracion();
-        System.out.println(caro1.getVelAct());
+//        inicio basica para crear auto
+//        Auto carro1 = new Auto(propietario,marca);
+
+//        inico completo para crear auto
+        Auto carro1 = new Auto(2023,"Plomo",2022,marca,2135123,propietario,267,12,true,6,false);
+//        Acelerar
+        carro1.aceleracion();
+        carro1.aceleracion();
+        carro1.aceleracion();
+//        Subir cambioas
+        carro1.subirMarcha();
+        carro1.subirMarcha();
+        carro1.subirMarcha();
+
+        System.out.println("Velocidad actual " + carro1.getVelAct() + " kg/h");
+//        Frenar
+        carro1.desaceleracion();
+        System.out.println("Velocidad actual despues de frenar " + carro1.getVelAct() + " kg/h");
+
+        System.out.println("Cambio actual " + carro1.getMarchaAct());
+//        bajar Cambio
+        carro1.bajarMarcha();
+        System.out.println("Cambio actual despues de bajar cambio " + carro1.getMarchaAct());
+
+        System.out.println(carro1.getMarca().getName());
     }
 }

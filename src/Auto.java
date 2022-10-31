@@ -6,16 +6,30 @@ public class Auto {
     private int chasis;
     private Propietario  propietario;
     private int velMax;
-    private int velAct;
+    private int velAct = 0;
     private int nPuertos;
     private boolean tieneTecho;
     private int nMarchas;
-    private int marchaAct;
+    private int marchaAct = 0;
     private  boolean transmisiónAuto;
 
     public Auto(Propietario propietario,Marca marca) {
         this.propietario = propietario;
         this.marca = marca;
+    }
+
+    public Auto(int modelo, String color, int anno, Marca marca, int chasis, Propietario propietario, int velMax, int nPuertos, boolean tieneTecho, int nMarchas, boolean transmisiónAuto) {
+        this.modelo = modelo;
+        Color = color;
+        this.anno = anno;
+        this.marca = marca;
+        this.chasis = chasis;
+        this.propietario = propietario;
+        this.velMax = velMax;
+        this.nPuertos = nPuertos;
+        this.tieneTecho = tieneTecho;
+        this.nMarchas = nMarchas;
+        this.transmisiónAuto = transmisiónAuto;
     }
 
     public int getModelo() {
@@ -108,26 +122,44 @@ public class Auto {
 
 
     public void aceleracion (){
-        if(velAct<velMax){
-            velAct ++;
+        if(this.velAct<this.velMax){
+            this.velAct ++;
         }
     }
 
     public void desaceleracion (){
-        if(velAct<0){
-            velAct --;
+        if(this.velAct>0){
+            this.velAct --;
         }
     }
 
+    public Marca getMarca() {
+        return marca;
+    }
+
+    public void setMarca(Marca marca) {
+        this.marca = marca;
+    }
+
+    public Propietario getPropietario() {
+        return propietario;
+    }
+
+    public void setPropietario(Propietario propietario) {
+        this.propietario = propietario;
+    }
+
     public void subirMarcha (){
-        if(!transmisiónAuto && marchaAct<nMarchas){
-            marchaAct ++;
+        if(!this.transmisiónAuto && this.marchaAct<this.nMarchas){
+            this.marchaAct ++;
         }
     }
 
     public void bajarMarcha (){
         if(!transmisiónAuto && marchaAct<nMarchas){
-            marchaAct ++;
+            if(this.marchaAct>0){
+                this.marchaAct --;
+            }
         }
     }
 
